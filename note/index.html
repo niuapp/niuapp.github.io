@@ -442,6 +442,23 @@ Android应用开发Android应用开发，我现在相对擅长的就是这个了
     
 </script>
 
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "嘘..." + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "哇！！！" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
   </div>
