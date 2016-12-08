@@ -109,7 +109,7 @@
         </hgroup>
 
         
-        <p class="header-subtitle">怂懒呆二 Android应用开发</p>
+        <p class="header-subtitle">怂懒呆二 执着专注</p>
         
 
         
@@ -150,7 +150,7 @@
                         <li>标签</li>
                         
                         
-                        <li>关于我</li>
+                        <li>关于</li>
                         
                     </ul>
                 </div>
@@ -163,24 +163,22 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/">主页</a></li>
+                            <li><a href="/archives/">所有</a></li>
                         
-                            <li><a href="/archives/">所有文章</a></li>
+                            <li><a href="/tags/">分类标签</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
+                            <li><a href="/about/">关于</a></li>
                         
                         </ul>
                     </nav>
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="http://mailto:345485985@qq.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:345485985@qq.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="https://github.com/niuapp" title="GitHub"></a>
                             
-                                <a class="fa QQ" href="http://wpa.qq.com/msgrd?v=3&uin=345485985&site=qq&menu=yes" title="QQ"></a>
+                                <a class="fa QQ" href="tencent://message/?menu=yes&uin=787710500&websitename=im.qq.com" title="QQ"></a>
                             
                         </ul>
                     </nav>
@@ -223,18 +221,16 @@
               <h1 class="header-author"><a href="/" title="回到主页">niuapp</a></h1>
             </hgroup>
             
-            <p class="header-subtitle">怂懒呆二 Android应用开发</p>
+            <p class="header-subtitle">怂懒呆二 执着专注</p>
             
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">所有</a></li>
                 
-                    <li><a href="/archives/">所有文章</a></li>
+                    <li><a href="/tags/">分类标签</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
+                    <li><a href="/about/">关于</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -242,17 +238,17 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="http://mailto:345485985@qq.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:345485985@qq.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/niuapp" title="GitHub"></a>
                             
-                                <a class="fa QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=345485985&site=qq&menu=yes" title="QQ"></a>
+                                <a class="fa QQ" target="_blank" href="tencent://message/?menu=yes&uin=787710500&websitename=im.qq.com" title="QQ"></a>
                             
                         </ul>
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于"/>
 </nav>
       <div class="body-wrap">
   
@@ -263,15 +259,6 @@
       <time datetime="2016-11-29T10:09:21.000Z" itemprop="datePublished">2016-11-29</time>
 </a>
 
- 
-    <a href="/2016/11/29/start/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2016/11/29/start/" ></span>
-        
-        
-    </a>
 
     </div>
   
@@ -372,31 +359,6 @@
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
 
-    
-        <script>
-            if ($(".left-col").is(":visible")) {
-                var duoshuoQuery = {short_name:"niuapp"};
-                (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'http://static.duoshuo.com/embed.js';
-                    s.async = true; s.charset = 'UTF-8';
-                    (d.head || d.body).appendChild(s);
-                })();
-
-                $(document).ready(function(){
-                    var $duoshuoCount = $(".ds-thread-count");
-                    $duoshuoCount.bind("DOMNodeInserted", function(e) {
-                        var num = $(this).text().replace(/[^0-9]/ig,"");
-                        $(this).siblings(".count-comment").text(num);
-                        $(this).remove();
-                    })
-                })
-            }
-        </script>
-    
-
-     
-
 
 
 
@@ -408,7 +370,22 @@
 <script>
     // Open in New Window
     
-        $("a[target=_blank]").removeAttr("target");
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
 </script>
 
