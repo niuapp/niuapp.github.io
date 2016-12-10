@@ -4,9 +4,72 @@
   
     
     <entry>
+      <title><![CDATA[Android中的Handler消息处理机制]]></title>
+      <url>//niuapp.github.io/2016/12/10/2_Android_Handler/</url>
+      <content type="html"><![CDATA[<p><img src="/assets/img/cover/handler.jpg" alt="Handler消息处理机制"></p>
+<p>关键字：Handler Looper 多线程<br><a id="more"></a><br>封面图出自黑马的一位老师<br><br>   </p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><br></p>
+<blockquote>
+<p>Handler的消息处理机制是为了解决Android多个线程操作UI带来的混乱和卡顿(看上去它确实是为此而存在的)</p>
+</blockquote>
+<p>为什么这么说呢？虽然现在Android会禁止非主线程去更新UI，但是为什么要这样？</p>
+<p>不从代码来看，试想一哈，学校的食堂窗口，如果学生们一起去挤去抢，那样会有多混乱，超低的效率，超随机的处理方式，可能有人等好久都吃不上饭了。</p>
+<p>排队打饭，按顺序来就可以避免这种乱七八糟不可控制的情况。</p>
+<p>这个就是规则的好处，而Android也是这样，为了避免多个线程去抢着更新UI，就直接规定非主线程不能更新UI，接着放出一个规则，非主线程要通过Handler来排队更新UI。</p>
+<p><br><br><strong>总结一下：</strong>Android中的Handler消息处理机制，就类似排队打饭，只不过不是自己去排队了，而且变成了电话预约，打电话先排上队，然后等通知。就是这样，而放到代码中，这个排队的人就是叫 “Handler”，打出去的排队电话就是 “Message”，排队通道就是 “MessageQueue”, 食堂大妈就是 “Looper”。</p>
+<blockquote>
+<p>额，写完才发现，好像去医院挂号更加像这个，但鉴于敲代码的身体都很好，基本不去医院，那就打饭的例子好了。</p>
+</blockquote>
+<p><br></p>
+<h2 id="简略流程"><a href="#简略流程" class="headerlink" title="简略流程"></a>简略流程</h2><p><br></p>
+<p>从以上图片和例子，先大体过一下简略的流程，然后再走较详细的。</p>
+<p>一般在使用Handler发送处理消息的时候，就是通过Handler对象发送一个消息，然后它重写消息处理的方法，处理消息。</p>
+<p>其实知道这些已经够了，内部的具体实现在用的时候一般是不用关心的，但它的想法是真的很好，通过规则避免问题，咱可以学习瞻仰下大神的想法。</p>
+<blockquote>
+<p>重点来了，首先Handler对象调用<strong>发消息</strong>的方法(具体先不管)，接着消息跑到了消息<strong>队列</strong> MessageQueue，然后通过Looper不停的轮询，取出消息队列中的消息<strong>丢还</strong>给<strong>发消息的Handler</strong>去处理，Handler通过一些判断，使用<strong>对应的方法</strong>处理消息。</p>
+</blockquote>
+<p>其实就是这样一个大概的流程，结合上边的例子可以看出这样做的好处，各个线程的需要呈现在用户眼前的任务不再混乱甚至卡顿，而是变成了单线处理方式，有规律有规则。就用这样一个简单的流程去解决，再次佩服！</p>
+<p><br></p>
+<h2 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h2><p><br></p>
+<p>这里从创建Handler Looper MessageQueue开始，然后在较详细的走一圈发送消息的过程。</p>
+<p><br></p>
+<h3 id="创建和初始化"><a href="#创建和初始化" class="headerlink" title="创建和初始化"></a>创建和初始化</h3><ol>
+<li>使用Handler时，是由我们自己new出的Handler对象。</li>
+<li>在Handler的构造方法中，会有<code>mLooper = Looper.myLooper();</code>,这里会得到Looper。而这个方法中是通过<code>(Looper)sThreadLocal.get();</code>得到的Looper，是从当前线程获取的，然后去找<code>sThreadLocal</code>，发现是<code>Looper</code>类中的静态成员，而且是在加载时就已经初始化，返回去再看<code>(Looper)sThreadLocal.get();</code>，既然是<code>get()</code>得到的，那应该是有个<code>set()</code>或者类似的方法，继续找，发现它的<code>set()</code>方法，然后里边直接就<code>new Looper()；</code>。</li>
+<li>在Looper的构造方法中，MessageQueue初始化<code>mQueue = new MessageQueue()</code>。</li>
+</ol>
+<p>由上可以看出，Handler是自己初始化的，而Looper和MessageQueue都是已经创建好的。</p>
+<blockquote>
+<p>应用启动时，主线程启动，<code>ActivityThread</code>中的<code>main()</code>方法执行，接着 <code>Looper.prepareMainLooper()</code>被调用，然后调用<code>prepare()</code>，调用了<code>上边2</code>那里那个<code>set()</code>，初试化了Looper和MessageQueue，在这之后，会在<code>main()</code>中继续调用<code>Looper.loop()</code>，去直接开始<strong>轮询</strong>MessageQueue中的消息，在这里，它会取出消息<code>Message msg = queue.next(); // might block</code>(可能会阻塞，后边再说)<br>，取出之后再解析分发消息，<strong>消息由哪个Handler来的，就把消息给它分发处理</strong><code>msg.target.dispatchMessage(msg);</code>,这里这个<code>target</code>来自Message对象的<code>target</code>属性，用于记录是哪个Handler所属的消息。</p>
+</blockquote>
+<p><br></p>
+<h3 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h3><ol>
+<li>调用Handler的<code>obtain()</code>，得到Message对象。</li>
+<li>设置消息内容。</li>
+<li>调用Handler的<code>sendMessage()</code>发送消息，经过<code>sendMessageDelayed()</code>到<code>sendMessageAtTime()</code>，在这里，MessageQueue的对象给这个消息排上队<code>queue.enqueueMessage(msg, uptimeMillis)</code>,给Message的对象target赋值<code>msg.target = this</code> 使 target代表当前的 Handler对象。</li>
+<li><p><code>enqueueMessage()</code>中，通过<code>when</code>(上边的”uptimeMillis”指的是消息的时间)把消息放到相应的位置(消息队列是一个单链表)。接着<code>if (needWake) {nativeWake(mPtr);}</code>(一个进程间通信机制：管道（pipe）。主线程Looper从消息队列读取消息，当读完所有消息时，进入睡眠，主线程阻塞。子线程往消息队列发送消息，并且往管道文件写数据，主线程即被唤醒，从管道文件读取数据。)保证轮询状态，接着<code>loop()</code>中调用Message<br>的target(发送消息的Handler对象)的<code>dispatchMessage()</code>，让发出这个消息的Handler去分发消息处理。</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (msg.callback != <span class="keyword">null</span>) &#123;</div><div class="line">	handleCallback(msg);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="keyword">if</span> (mCallback != <span class="keyword">null</span>) &#123;</div><div class="line">		<span class="keyword">if</span> (mCallback.handleMessage(msg)) &#123;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	handleMessage(msg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 判断 msg是否设置了callback(Runnable对象，在得到msg时设置，重写run()方法)。</p>
+<p> 设置了 就调用handleCallback()调用run方法。</p>
+<p> 没有设置 就判断 当前Handler是否设置了mCallback(Callback对象，在创建Handler时设置，重写handlerMessage方法，常用).</p>
+<p> 设置了就调用这个对象的 handlerMessage方法</p>
+<p> 都没有 就调用 Handler 类的 handlerMessage方法。</p>
+</li>
+<li><p>处理完继续轮询。</p>
+</li>
+</ol>
+<p><br><br><em>完</em><br><br></p>
+<blockquote>
+<p>总结:<br>多么厉害的想法，简单有效的规程处理规避了多线程带来的问题，强无敌！作为一个渣渣，表示一下对大神的膜拜！ <strong>b(￣▽￣)d</strong></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java中的网络编程初试]]></title>
-      <url>//niuapp.github.io/2016/12/09/1_JavaSocket/</url>
-      <content type="html"><![CDATA[<p><img src="/assets/img/xmind/网络编程.png" alt="网络编程"></p>
+      <url>//niuapp.github.io/2016/12/09/1_Java_Socket/</url>
+      <content type="html"><![CDATA[<p><img src="/assets/img/cover/网络编程.png" alt="网络编程"></p>
 <p>关键字：TCP UDP Socket 网络编程<br><a id="more"></a><br><br>   </p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><br></p>
 <blockquote>
