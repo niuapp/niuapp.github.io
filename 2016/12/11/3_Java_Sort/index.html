@@ -15,15 +15,16 @@
 
 
 
-<meta name="description" content="兴趣所致，接触开发，现在主职Android应用开发，比较渣渣，请多指教。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="niuapp">
-<meta property="og:url" content="//niuapp.github.io/archives/2016/11/index.html">
+<meta name="description" content="关键字：插入排序 排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="插入排序">
+<meta property="og:url" content="//niuapp.github.io/2016/12/11/3_Java_Sort/index.html">
 <meta property="og:site_name" content="niuapp">
-<meta property="og:description" content="兴趣所致，接触开发，现在主职Android应用开发，比较渣渣，请多指教。">
+<meta property="og:description" content="关键字：插入排序 排序">
+<meta property="og:updated_time" content="2016-12-11T14:10:09.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="niuapp">
-<meta name="twitter:description" content="兴趣所致，接触开发，现在主职Android应用开发，比较渣渣，请多指教。">
+<meta name="twitter:title" content="插入排序">
+<meta name="twitter:description" content="关键字：插入排序 排序">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2016/11 | niuapp</title>
+<title>插入排序 | niuapp</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -232,60 +233,234 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-3_Java_Sort" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/29/start/" class="archive-article-date">
-      <time datetime="2016-11-29T10:09:21.000Z" itemprop="datePublished">11-29</time>
+    <div class="article-meta">
+      <a href="/2016/12/11/3_Java_Sort/" class="article-date">
+      <time datetime="2016-12-11T13:30:00.000Z" itemprop="datePublished">2016-12-11</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/29/start/">总有一个开始</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      插入排序
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/心情/">心情</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/牢骚/">牢骚</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>关键字：插入排序 排序</p>
+<a id="more"></a> 
+<p><br>   </p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><br></p>
+<blockquote>
+<p>插入排序，记住一点就好 <strong>目标位置往前的部分 要保持有序，目标要插入到该部分对应位置</strong></p>
+</blockquote>
+<p>先上代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//定义数组</span></div><div class="line"><span class="keyword">int</span>[] a = &#123;<span class="number">49</span>,<span class="number">38</span>,<span class="number">65</span>,<span class="number">97</span>,<span class="number">76</span>,<span class="number">13</span>,<span class="number">27</span>,<span class="number">49</span>,<span class="number">78</span>,<span class="number">34</span>,<span class="number">12</span>,<span class="number">64</span>,<span class="number">1</span>&#125;;</div><div class="line"></div><div class="line"><span class="comment">//遍历数组</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;a.length; i++)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//查找 a[i] 在 i 索引之前 的排序后位置</span></div><div class="line">		<span class="comment">//当前一个元素大于后一个元素时，交换两个元素，</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j=i; j&gt;=<span class="number">1</span> &amp;&amp; a[j-<span class="number">1</span>]&gt;a[j]; j--)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> temp = a[j];</div><div class="line">		a[j] = a[j-<span class="number">1</span>];</div><div class="line">		a[j-<span class="number">1</span>] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">System.out.println(Arrays.toString(a));</div></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<p>从第二个元素开始遍历</p>
+</blockquote>
+<p>刚开始第一个元素是不需要管的，第一个只要一个元素，相对就是有序的，从第二个开始遍历，目的是要和第一个元素组成一个相对有序的部分，然后继续去看第三个元素，第三个要和前两个组成相对有序的部分，直到最后一个插入完成，排序结束。</p>
+<p><br></p>
+<blockquote>
+<p>内层循环</p>
+</blockquote>
+<p>上边说了，需要把元素插入到前边相对有序的部分之中，所以要从当前位置往前遍历(<code>--</code>)，比较当前元素和前一个元素，如果当前元素<strong>小</strong>，就交换位置继续往前比较，如果当前元素<strong>大</strong>，那么就和前边部分组成相对有序，就跳出循环继续插入下一个元素</p>
+<blockquote>
+<p>效率</p>
+</blockquote>
+<p>它比较适合使用在已经<strong>基本有序</strong>的数组，比如<code>[1, 3, 4, 2, 6, 9, 7]</code>，像这个数组，已经基本有序了，它在使用插入排序时效率就很高了， 不需要老是去遍历相对很多个元素了。</p>
+<blockquote>
+<p>插入排序非常容易理解，所以要手写代码的话也比较流畅，记录一下。</p>
+</blockquote>
+<p><br><br><em>完</em><br><br></p>
+<blockquote>
+<p>总结:<br>之前买的<em>巴克球</em>今天到了，更新个简单的，代码少，面试如果要手写个排序可以用到。</p>
+</blockquote>
 
+      
+    </div>
+    
+  </div>
+  
     
 
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/12/10/2_Android_Handler/">
+                    Android中的Handler消息处理机制
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+			<a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+			<a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"插入排序　| niuapp　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/12/11/3_Java_Sort/" data-title="插入排序" data-url="//niuapp.github.io/2016/12/11/3_Java_Sort/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"niuapp"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=niuapp&threads=2016/12/11/3_Java_Sort/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/12/10/2_Android_Handler/" title="下一篇: Android中的Handler消息处理机制">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/12/11/3_Java_Sort/">插入排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/2_Android_Handler/">Android中的Handler消息处理机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/09/1_Java_Socket/">Java中的网络编程初试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/29/start/">总有一个开始</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

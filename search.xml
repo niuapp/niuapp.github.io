@@ -4,6 +4,42 @@
   
     
     <entry>
+      <title><![CDATA[插入排序]]></title>
+      <url>//niuapp.github.io/2016/12/11/3_Java_Sort/</url>
+      <content type="html"><![CDATA[<p>关键字：插入排序 排序</p>
+<a id="more"></a> 
+<p><br>   </p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><br></p>
+<blockquote>
+<p>插入排序，记住一点就好 <strong>目标位置往前的部分 要保持有序，目标要插入到该部分对应位置</strong></p>
+</blockquote>
+<p>先上代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//定义数组</span></div><div class="line"><span class="keyword">int</span>[] a = &#123;<span class="number">49</span>,<span class="number">38</span>,<span class="number">65</span>,<span class="number">97</span>,<span class="number">76</span>,<span class="number">13</span>,<span class="number">27</span>,<span class="number">49</span>,<span class="number">78</span>,<span class="number">34</span>,<span class="number">12</span>,<span class="number">64</span>,<span class="number">1</span>&#125;;</div><div class="line"></div><div class="line"><span class="comment">//遍历数组</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;a.length; i++)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//查找 a[i] 在 i 索引之前 的排序后位置</span></div><div class="line">		<span class="comment">//当前一个元素大于后一个元素时，交换两个元素，</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j=i; j&gt;=<span class="number">1</span> &amp;&amp; a[j-<span class="number">1</span>]&gt;a[j]; j--)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> temp = a[j];</div><div class="line">		a[j] = a[j-<span class="number">1</span>];</div><div class="line">		a[j-<span class="number">1</span>] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">System.out.println(Arrays.toString(a));</div></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<p>从第二个元素开始遍历</p>
+</blockquote>
+<p>刚开始第一个元素是不需要管的，第一个只要一个元素，相对就是有序的，从第二个开始遍历，目的是要和第一个元素组成一个相对有序的部分，然后继续去看第三个元素，第三个要和前两个组成相对有序的部分，直到最后一个插入完成，排序结束。</p>
+<p><br></p>
+<blockquote>
+<p>内层循环</p>
+</blockquote>
+<p>上边说了，需要把元素插入到前边相对有序的部分之中，所以要从当前位置往前遍历(<code>--</code>)，比较当前元素和前一个元素，如果当前元素<strong>小</strong>，就交换位置继续往前比较，如果当前元素<strong>大</strong>，那么就和前边部分组成相对有序，就跳出循环继续插入下一个元素</p>
+<blockquote>
+<p>效率</p>
+</blockquote>
+<p>它比较适合使用在已经<strong>基本有序</strong>的数组，比如<code>[1, 3, 4, 2, 6, 9, 7]</code>，像这个数组，已经基本有序了，它在使用插入排序时效率就很高了， 不需要老是去遍历相对很多个元素了。</p>
+<blockquote>
+<p>插入排序非常容易理解，所以要手写代码的话也比较流畅，记录一下。</p>
+</blockquote>
+<p><br><br><em>完</em><br><br></p>
+<blockquote>
+<p>总结:<br>之前买的<em>巴克球</em>今天到了，更新个简单的，代码少，面试如果要手写个排序可以用到。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android中的Handler消息处理机制]]></title>
       <url>//niuapp.github.io/2016/12/10/2_Android_Handler/</url>
       <content type="html"><![CDATA[<p><img src="/assets/img/cover/handler.jpg" alt="Handler消息处理机制"></p>
