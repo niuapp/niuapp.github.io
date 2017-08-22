@@ -1,0 +1,205 @@
+{
+    "success": true,
+    "code": 1000,
+    "message": "",
+    "error": "",
+    "data": {
+        "commendList": [
+            {
+                "id": 18,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "童鞋",
+                "comments": 0,
+                "img_name": ""
+            },
+            {
+                "id": 1,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "奶瓶",
+                "comments": 0,
+                "img_name": ""
+            },
+            {
+                "id": 1,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "奶瓶",
+                "comments": 0,
+                "img_name": ""
+            },
+            {
+                "id": 4,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "尿不湿",
+                "comments": 0,
+                "img_name": ""
+            },
+            {
+                "id": 4,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "尿不湿",
+                "comments": 0,
+                "img_name": ""
+            },
+            {
+                "id": 5,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "衣服",
+                "comments": 0,
+                "img_name": ""
+            },
+            {
+                "id": 11,
+                "img_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "feedback": 100,
+                "price": 58,
+                "name": "衣服",
+                "comments": 0,
+                "img_name": ""
+            }
+        ],
+        "siList": [
+            {
+                "id": 1,
+                "stList": [
+                    {
+                        "id": 5,
+                        "sellnum": 0,
+                        "uid": 9917,
+                        "num": 777,
+                        "storeid": 1,
+                        "price": 58,
+                        "status": "1",
+                        "svnames": "小鹿（白）,66",
+                        "name": "奶瓶",
+                        "gid": 1,
+                        "catid": 1,
+                        "surplusnum": 91,
+                        "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/fe763d124fa7352190a79a8c3933a6fd.jpg"
+                    }
+                ],
+                "status": "1",
+                "openingtime": "2017-08-18 21:30:39",
+                "store_name": "星星星",
+                "handling": 4,
+                "logo_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "closingtime": "2017-08-18 21:30:54"
+            },
+            {
+                "id": 8,
+                "stList": [
+                    {
+                        "id": 6,
+                        "sellnum": 0,
+                        "uid": 9917,
+                        "num": 2,
+                        "storeid": 8,
+                        "price": 58,
+                        "status": "1",
+                        "svnames": "KT猫（黄）,66",
+                        "name": "尿不湿",
+                        "gid": 4,
+                        "catid": 1,
+                        "surplusnum": 94,
+                        "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/85ea5acff674e2eb85a43c7a61d4907d.jpg"
+                    }
+                ],
+                "status": "1",
+                "openingtime": "",
+                "store_name": "小红帽",
+                "handling": 4,
+                "logo_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "closingtime": ""
+            },
+            {
+                "id": 9,
+                "stList": [
+                    {
+                        "id": 7,
+                        "sellnum": 0,
+                        "uid": 9917,
+                        "num": 3,
+                        "storeid": 9,
+                        "price": 58,
+                        "status": "1",
+                        "svnames": "KT猫（白）,66",
+                        "name": "衣服",
+                        "gid": 5,
+                        "catid": 11,
+                        "surplusnum": 56,
+                        "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/5e15059d8b163d8811f2d9d07f70d37b.jpg"
+                    }
+                ],
+                "status": "1",
+                "openingtime": "",
+                "store_name": "金摇篮",
+                "handling": 4,
+                "logo_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "closingtime": ""
+            },
+            {
+                "id": 10,
+                "stList": [
+                    {
+                        "id": 11,
+                        "sellnum": 0,
+                        "uid": 9917,
+                        "num": 1,
+                        "storeid": 10,
+                        "price": 58,
+                        "status": "1",
+                        "svnames": "小鹿（白）,80",
+                        "name": "童鞋",
+                        "gid": 18,
+                        "catid": 12,
+                        "surplusnum": 100,
+                        "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/d4138bfe4dbfed6736541672b74be3cc.jpg"
+                    }
+                ],
+                "status": "1",
+                "openingtime": "",
+                "store_name": "小童星",
+                "handling": 4,
+                "logo_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "closingtime": ""
+            },
+            {
+                "id": 20,
+                "stList": [
+                    {
+                        "id": 8,
+                        "sellnum": 0,
+                        "uid": 9917,
+                        "num": 6,
+                        "storeid": 20,
+                        "price": 58,
+                        "status": "1",
+                        "svnames": "小鹿（黄）,73",
+                        "name": "衣服",
+                        "gid": 11,
+                        "catid": 11,
+                        "surplusnum": 96,
+                        "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/a03352b033f44c9e5fb411685574f6f4.jpg"
+                    }
+                ],
+                "status": "1",
+                "openingtime": "2017-08-18 21:30:34",
+                "store_name": "灰太狼",
+                "handling": 4,
+                "logo_url": "http://img.juimg.com/tuku/yulantu/120926/219049-12092612154377.jpg",
+                "closingtime": "2017-08-18 21:30:49"
+            }
+        ]
+    }
+}
