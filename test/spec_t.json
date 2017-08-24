@@ -1,0 +1,263 @@
+{
+    "success": true,
+    "code": 1000,
+    "message": "",
+    "error": "",
+    "data": {
+        "sgList": [
+            {
+                "id": 1,
+                "sellnum": 0,
+                "price": 41,
+                "svnames": "XXL,粉色",
+                "gid": 1,
+                "svids": "7,8",
+                "imgname": "thumb7,8",
+                "surplusnum": 1000,
+                "imgurl": "img/square.png"
+            },
+            {
+                "id": 21,
+                "sellnum": 0,
+                "price": 42,
+                "svnames": "小鹿（粉）,73",
+                "gid": 1,
+                "svids": "15,22",
+                "imgname": "thumb15,22",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/a354a66e516a0fb49d91dfd64c558d04.jpg"
+            },
+            {
+                "id": 22,
+                "sellnum": 0,
+                "price": 43,
+                "svnames": "小鹿（蓝）,73",
+                "gid": 1,
+                "svids": "16,22",
+                "imgname": "thumb16,22",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/69d5ad53102f44cb49b176f217b2afb1.jpg"
+            },
+            {
+                "id": 23,
+                "sellnum": 0,
+                "price": 44,
+                "svnames": "KT猫（黄）,73",
+                "gid": 1,
+                "svids": "18,22",
+                "imgname": "thumb18,22",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/6c02cc8c995ee4703b5d514e89fd13b6.jpg"
+            },
+            {
+                "id": 24,
+                "sellnum": 0,
+                "price": 45,
+                "svnames": "KT猫（白）,73",
+                "gid": 1,
+                "svids": "17,22",
+                "imgname": "thumb17,22",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/e039a8a74e53323b83034a095bafffdc.jpg"
+            },
+            {
+                "id": 25,
+                "sellnum": 0,
+                "price": 46,
+                "svnames": "KT猫（粉）,73",
+                "gid": 1,
+                "svids": "19,22",
+                "imgname": "thumb19,22",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/7245dd15eebebf23f3768aa42ce25859.jpg"
+            },
+            {
+                "id": 26,
+                "sellnum": 0,
+                "price": 47,
+                "svnames": "小鹿（黄）,80",
+                "gid": 1,
+                "svids": "14,23",
+                "imgname": "thumb14,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/6b1d1f019c9763ed0cc1edc274648856.jpg"
+            },
+            {
+                "id": 27,
+                "sellnum": 0,
+                "price": 48,
+                "svnames": "小鹿（白）,80",
+                "gid": 1,
+                "svids": "13,23",
+                "imgname": "thumb13,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/d4138bfe4dbfed6736541672b74be3cc.jpg"
+            },
+            {
+                "id": 28,
+                "sellnum": 0,
+                "price": 49,
+                "svnames": "KT猫（蓝）,73",
+                "gid": 1,
+                "svids": "20,22",
+                "imgname": "thumb20,22",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/c4227c8559be856cf48d345e6e9a19a6.jpg"
+            },
+            {
+                "id": 29,
+                "sellnum": 0,
+                "price": 50,
+                "svnames": "小鹿（粉）,80",
+                "gid": 1,
+                "svids": "15,23",
+                "imgname": "thumb15,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/7be755316c176eafa0ef5736a6c21a49.jpg"
+            },
+            {
+                "id": 30,
+                "sellnum": 0,
+                "price": 51,
+                "svnames": "小鹿（蓝）,80",
+                "gid": 1,
+                "svids": "16,23",
+                "imgname": "thumb16,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/32cb45a864fa566b7ba8b0993a06e89f.jpg"
+            },
+            {
+                "id": 31,
+                "sellnum": 0,
+                "price": 52,
+                "svnames": "KT猫（白）,80",
+                "gid": 1,
+                "svids": "17,23",
+                "imgname": "thumb17,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/fc21e25bca447ee73833de3ff7913236.jpg"
+            },
+            {
+                "id": 32,
+                "sellnum": 0,
+                "price": 53,
+                "svnames": "KT猫（粉）,80",
+                "gid": 1,
+                "svids": "19,23",
+                "imgname": "thumb19,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/29908fc06a00582a1575bd90ee3a5185.jpg"
+            },
+            {
+                "id": 33,
+                "sellnum": 0,
+                "price": 54,
+                "svnames": "KT猫（黄）,80",
+                "gid": 1,
+                "svids": "18,23",
+                "imgname": "thumb18,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/debbb436dfe0fb448292ca1c3172ca26.jpg"
+            },
+            {
+                "id": 34,
+                "sellnum": 0,
+                "price": 55,
+                "svnames": "KT猫（蓝）,80",
+                "gid": 1,
+                "svids": "20,23",
+                "imgname": "thumb20,23",
+                "surplusnum": 30,
+                "imgurl": "https://test-lsx-b.oss-cn-shanghai.aliyuncs.com/51ce1c4074540f637aa0bf7a2e819b19.jpg"
+            }
+        ],
+        "specList": [
+            {
+                "id": 10,
+                "name": "参考身高",
+                "status": "1",
+                "code": "09",
+                "svList": [
+                    {
+                        "id": 22,
+                        "uid": 34,
+                        "specid": 10,
+                        "specname": "参考身高",
+                        "specval": "73"
+                    },
+                    {
+                        "id": 23,
+                        "uid": 34,
+                        "specid": 10,
+                        "specname": "参考身高",
+                        "specval": "80"
+                    }
+                ]
+            },
+             {
+                "id": 2,
+                "name": "颜色",
+                "status": "1",
+                "code": "01",
+                "svList": [
+                    {
+                        "id": 13,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "小鹿（白）"
+                    },
+                    {
+                        "id": 14,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "小鹿（黄）"
+                    },
+                    {
+                        "id": 15,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "小鹿（粉）"
+                    },
+                    {
+                        "id": 16,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "小鹿（蓝）"
+                    },
+                    {
+                        "id": 17,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "KT猫（白）"
+                    },
+                    {
+                        "id": 18,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "KT猫（黄）"
+                    },
+                    {
+                        "id": 19,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "KT猫（粉）"
+                    },
+                    {
+                        "id": 20,
+                        "uid": 34,
+                        "specid": 2,
+                        "specname": "颜色",
+                        "specval": "KT猫（蓝）"
+                    }
+                ]
+            }
+        ]
+    }
+}
