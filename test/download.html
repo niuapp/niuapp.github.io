@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta name="keywords" content="盐城市智贝星电子商务有限公司,智贝星，云骑配送，云骑，配送，同城母婴，同城配送，同城母婴智贝星，母婴加盟入驻，入驻加盟，同城，母婴，母婴商城，商城">
+        <meta name="description" content="智贝星是中国专业的母婴同城闪购O2O平台，由盐城市智贝星电子商务有限公司在2015年创立，是中国同城闪购母婴的领跑者。">
+        <meta name="baidu-site-verification" content="QqGZFhiKOp"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/video.css">
+        <link rel="shortcut icon" href="img/smallLogo.png">
+        <title>下载</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+    // 获取终端的相关信息
+    var Terminal = {
+        // 辨别移动终端类型
+        platform : function(){
+            var u = navigator.userAgent, app = navigator.appVersion;
+           /* document.write(navigator.appVersion);*/
+            return {
+                // android终端或者uc浏览器
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                // 是否为iPhone或者QQHD浏览器
+                iPhone: u.indexOf('iPhone') > -1 ,
+                // 是否iPad
+                iPad: u.indexOf('iPad') > -1,
+
+            };
+        }(),
+        // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
+        language : (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+
+    // 根据不同的终端，跳转到不同的地址
+    var theUrl = 'http://www.zbxvip.com';
+    if(Terminal.platform.android){// android系统APP
+        theUrl = 'http://www.zbxvip.com/download_app/app/zbx_android.apk';
+    }else if (Terminal.platform.iPhone|Terminal.platform.iPad){// iphone系统APP
+        theUrl = 'https://itunes.apple.com/cn/app/id1274384438';
+    }
+
+    location.href = theUrl;
+
+
+</script>
+    </body>
+</html>
